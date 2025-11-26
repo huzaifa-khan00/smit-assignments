@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+  list-style-type: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, var(--primary-bg-color));
+}
+
+:root {
+  --primary-bg-color: #313647;
+  --primary-btn-color: linear-gradient(90deg, #ff3f7f, #8c00ff);
+  --accent-color: #ffc400;
+  --crimson-color: #ff3f7f;
+  --yellow-color: #ffc400;
+  --purple-color: #8c00ff;
+  --dark-purple-color: #450693;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  padding: 0px 3%;
+}
+
+nav .logo {
+  width: 10%;
+  height: 80%;
+  font-size: larger;
+  font-family: "science gothic", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.logo > span {
+  font-family: "black ops one", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+  color: crimson;
+  padding-top: 4px;
+  text-shadow: 0px 0px 10px 5px red;
+}
+
+.links {
+  width: 80%;
+  height: 80%;
+  color: whitesmoke;
+}
+
+nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+nav ul li{
+    font-family: 'science gothic', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav a {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 80%;
+  background-color: crimson;
+  color: white;
+  border: 1px solid red;
+  box-shadow: inset 0px 0px 10px 5px red;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: large;
+  position: relative;
+  z-index: 1;
+  transition: transform .5s ease;
+}
+
+.contact-btn > span{
+  font-family: "science gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contact-btn:hover{
+  transform: scale(1.5);
+  transform: translateY(20px);
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 3px red;
+}
+
+.contact-btn2{
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  box-shadow: 0px 0px 20px 7px red;
+  transition: box-shadow .5s ease;
+}
+
+.contact-btn2:hover{
+  box-shadow: 0px 0px 15px 3px red;
+}
