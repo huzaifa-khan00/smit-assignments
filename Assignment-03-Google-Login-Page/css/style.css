@@ -1,0 +1,407 @@
+html,
+body {
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(240, 244, 249);
+	box-sizing: border-box;
+}
+
+.main-container {
+	width: 67%;
+	max-width: 878px;
+	min-width: 878px;
+	min-width: 0px;
+	height: 63%;
+	min-height: 347px;
+	max-height: 347px;
+	margin: 0px;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	font-weight: normal;
+	font-size: large;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255, 255, 255);
+	border-radius: 30px;
+	display: flex;
+	box-shadow: 0px 1px 10px -4px gray;
+}
+
+.hero1 {
+	background-color: rgb(255, 255, 255);
+	width: 50%;
+	height: 100%;
+	border-radius: 25px;
+	box-sizing: border-box;
+	padding: 30px;
+}
+
+.hero2 {
+	background-color: rgb(255, 255, 255);
+	width: 50%;
+	height: 100%;
+	border-radius: 25px;
+	box-sizing: border-box;
+	padding: 30px;
+	margin-right: 18px;
+}
+
+.hero2 > input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero1 > span {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+}
+
+div > form {
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.emptydiv {
+	width: 60px;
+	height: 60px;
+}
+
+.floating-label {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.floating-label {
+	text-align: center;
+}
+
+.hero1 p {
+	font-size: medium;
+}
+
+.hero2 button,
+.hero2 a {
+	width: 80px;
+	height: 40px;
+	background-color: #0b57d0;
+	font-weight: bolder;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: #e5ecf7;
+	border-radius: 50px;
+	outline: none;
+	border: 0px;
+	text-decoration: none;
+}
+
+.hero2 button:hover {
+	background-color: #0a4bb4;
+	cursor: pointer;
+	box-shadow: 0px 1px 4px 0px gray;
+}
+
+.next {
+	margin-top: 40px;
+	display: flex;
+	justify-content: end;
+	width: 100%;
+}
+
+.hero1 h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+	margin-top: 15px;
+}
+
+.container2 {
+	width: 100%;
+	height: 18%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+ /* Container 2 */
+
+ .footer {
+	display: none;
+ }
+
+.dropdown {
+	display: flex;
+	align-items: center;
+}
+
+.dropdown > select {
+	color: rgb(66, 69, 70);
+	background-color: rgb(240, 244, 249);
+	height: 30px;
+	width: 200px;
+	border-radius: 10px;
+	font-size: 12px;
+	padding: 0px 19px;
+	border: none;
+}
+
+.links {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	width: 200px;
+}
+
+.links a {
+	text-decoration: none;
+	color: rgb(95, 98, 99);
+	font-size: small;
+}
+
+.links > li {
+	border-radius: 10px;
+}
+
+.dropdown > select:hover,
+.links > li:hover {
+	background-color: #e3e3e3;
+}
+
+.links > li > a {
+	padding: 4px;
+	margin: 4px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.dropdown > select:focus {
+	background-color: white;
+}
+
+/* --- Floating Label Fixed + Polished --- */
+.floating-label {
+	position: relative;
+	margin-top: 25px;
+	width: 100%;
+}
+
+.floating-label input {
+	width: 100%;
+	height: 55px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 0px 18px 0px 18px; /* space for label */
+	font-size: 16px;
+	background-color: transparent;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.floating-label label {
+	position: absolute;
+	left: 12px;
+	top: 18px;
+	font-size: 16px;
+	color: gray;
+	pointer-events: none;
+	background-color: white;
+	transition: all 0.2s ease;
+	padding: 0 4px;
+}
+
+/* When input is focused or has text */
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+	top: -9px;
+	left: 8px;
+	font-size: 12px;
+	color: #0b57d0;
+}
+
+/* Optional text styling */
+.floating-label label::after {
+	content: attr(data-optional);
+	color: gray;
+	font-weight: normal;
+	font-size: 13px;
+	margin-left: 4px;
+}
+
+.floating-label input:focus {
+	/* 	outline: none; */
+	transition: outline-color 0.5s ease;
+	outline-color: blue;
+}
+
+@media only screen and (max-width: 768px) {
+	.main-container {
+		width: 59%;
+		min-width: 454px;
+		max-width: 454px;
+		height: 85%;
+		min-height: 470px;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+	}
+
+	.container2 {
+		width: 100%;
+		height: 9%;
+		min-height: 9%;
+		max-height: 9%;
+	}
+
+	div > form {
+		height: 0%;
+	}
+
+	.hero1 {
+		width: 100%;
+		padding-bottom: 0px;
+		height: 38%;
+		padding-top: 10px;
+	}
+	.emptydiv {
+		display: none;
+	}
+
+	.hero1 h1 {
+		display: flex;
+		flex-direction: row;
+		font-size: 35px;
+		width: 100%;
+	}
+
+	.hero2 {
+		width: 100%;
+		height: 50%;
+		margin-right: 0px;
+		padding-top: 0px;
+		box-sizing: border-box;
+	}
+
+	.hero2 input {
+		padding: 0px 18px 0px 18px;
+	}
+
+	.next {
+		margin-top: 73px;
+	}
+}
+             /* Mobile Large Sreen */
+@media only screen and (max-width: 463px) {
+	.main-container {
+		width: 100%;
+		min-width: 425px;
+		max-width: 425px;
+		height: 100vh;
+	    min-height: 100vh;
+		max-height: 100%;
+		width: 100vw;
+	}
+
+	.container {
+		margin-top: 0px;
+		padding-top: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		border-radius: 0px;
+	}
+
+	.container2 {
+		display: none;
+}
+
+	.footer {
+		display: flex;
+		height: 5%;
+ }
+
+ 	.footer .links {
+		margin-right: 5px;
+	}
+
+ 	.links {
+		margin: 0px;
+		align-items: center;
+	}
+
+	div > form {
+		height: 0%;
+	}
+
+	.hero1 {
+		width: 100%;
+		height: 23%;
+		padding-bottom: 0px;
+	}
+	.emptydiv {
+		display: none;
+	}
+
+	.hero1 h1 {
+		display: flex;
+		flex-direction: row;
+		font-size: 35px;
+		width: 100%;
+		font-size: 32px;
+	}
+
+	.hero2 {
+		width: 100%;
+		height: 68%;
+		margin-right: 0px;
+		padding-top: 0px;
+		box-sizing: border-box;
+	}
+
+	.hero2 input {
+		padding: 0px 18px 0px 18px;
+	}
+
+	.next {
+		margin-top: 10%;
+
+	}
+
+	.hero1 p {
+		margin-bottom: 0px;
+	}
+
+	.dropdown > select:hover,
+	.links > li:hover,
+	.links a {
+		background-color: none;
+	}
+
+	.hero1 img {
+		margin-left: -10px;
+	}
+
+	.dropdown > select {
+		background-color: white;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.main-container {
+		min-width: 375px;
+        max-width: 375px;
+	}
+}
