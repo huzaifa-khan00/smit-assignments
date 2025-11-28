@@ -528,34 +528,41 @@ body::-webkit-scrollbar {
 
 /* Infinite Slider */
 
-@keyframes infinite-scroll {
+/* @keyframes infinite-scroll {
   from{
     transform: translateX(100%);
   }
   to{
     transform: translateX(0%);
+  }
+} */
+
+@keyframes infinite-scroll {
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform: translateX(-100%);
   }
 }
 
-@keyframes infinite-scroll2 {
-  from{
-    transform: translateX(0%);
-  }
-  to{
-    transform: translateX(100%);
-  }
+.infinite-slider-parent{
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+}
+
+.infinite-slider-parent::-webkit-scrollbar{
+  display: none;
 }
 
 .infinite-slider{
-  width: 100%;
   display: flex;
-  gap: 1em;
-  overflow-x: hidden;
-  /* animation: infinite-scroll 10s linear infinite; */
-  position: relative;
+  animation: infinite-scroll 15s linear infinite;
 }
 
-.infinite-slider::-webkit-scrollbar{
+.infinite-slider-parent::-webkit-scrollbar{
   display: none;
 }
 
@@ -566,7 +573,6 @@ body::-webkit-scrollbar {
 }
 
 .inf-card {
-  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -576,8 +582,6 @@ body::-webkit-scrollbar {
   margin-bottom: 0.8em;
   color: white;
   font-weight: bolder;
-  scroll-snap-align: center;
-  scroll-padding-left: 100px;
 }
 
 /* Footer CSS Starts Here */
