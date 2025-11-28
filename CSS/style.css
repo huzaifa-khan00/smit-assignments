@@ -9,8 +9,9 @@
 html,
 body {
   width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle, var(--primary-bg-color));
+  background-image: url('../Assets/Images/thunderstorm-illustration-digital-art-style.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 :root {
@@ -23,225 +24,85 @@ body {
   --dark-purple-color: #450693;
 }
 
-header {
+header{
   display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 60px;
-  justify-content: center;
-}
-
-nav {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.2em;
-  padding: 0px 3%;
-}
-
-nav .logo {
-  width: 10%;
-  height: 80%;
-  font-size: larger;
-  font-family: "science gothic", "Gill Sans", "Gill Sans MT", Calibri,
-    "Trebuchet MS", sans-serif;
-  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: whitesmoke;
-  position: relative;
+  border: 1px solid black;
+  backdrop-filter: blur(20px);
+  width: 90%;
+  margin: 2em auto;
+  overflow-y: hidden;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0px 0px 10px 0px black;
 }
 
-.logo > span {
-  font-family: "black ops one", "Gill Sans", "Gill Sans MT", Calibri,
-    "Trebuchet MS", sans-serif;
-  font-size: x-large;
-  color: crimson;
-  padding-top: 4px;
-  font-size: larger;
+header img{
+    object-fit: contain;
+    /* height: 10em; */
+    height: auto;
+    width: 30%;
+    margin-top: 1em;
 }
 
-.links {
-  width: 80%;
-  height: 80%;
-  color: whitesmoke;
-}
-
-nav ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  border-radius: 5px;
-}
-
-nav li{
-    height: 100%;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .5s ease;
-}
-
-nav li:hover{
-  background-color: red;
-  border-radius: 5px;
-}
-
-nav a {
-  width: 100%;
-  text-align: center;
-  list-style-type: none;
-  text-decoration: none;
+header h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 5em;
   color: white;
-  font-family: 'science gothic', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.home{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 5;
-}
-
-.home::after{
-  content: 'Coming soon';
-  width: 50%;
-  height: 70%;
-  font-size: .6em;
-  transition: all .5s ease;
-  margin: 0px auto;
-  position: absolute;
-  background-color: crimson;
-  transform: translateY(0);
-  transition: transform .5s ease;
-}
-
-.home:hover::after{
-  transform: translateY(50px);
-}
-
-.about{
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.about::after{
-  content: 'Coming soon';
-  width: 50%;
-  height: 70%;
-  font-size: .6em;
-  transition: all .5s ease;
-  margin: 0px auto;
-  position: absolute;
-  background-color: crimson;
-  z-index: -0;
-  transform: translateY(0);
-  transition: transform .5s ease;
-}
-
-.about:hover::after{
-  transform: translateY(50px);
-}
-
-.projects{
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.projects::after{
-  content: 'Available';
-  width: 50%;
-  height: 70%;
-  font-size: .6em;
-  transition: all .5s ease;
-  margin: 0px auto;
-  position: absolute;
-  background-color: red;
-  box-shadow: 0px 0px 10px 3px red;
-  z-index: -0;
-  transform: translateY(0);
-  transition: transform .5s ease;
-}
-
-.projects:hover::after{
-  transform: translateY(50px);
-}
-
-.services{
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.services::after{
-  content: 'Coming soon';
-  width: 50%;
-  height: 70%;
-  font-size: .6em;
-  transition: all .5s ease;
-  margin: 0px auto;
-  position: absolute;
-  background-color: crimson;
-  z-index: -0;
-  transform: translateY(0);
-  transition: transform .5s ease;
-}
-
-.services:hover::after{
-  transform: translateY(50px);
-}
-
-.contact-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10%;
-  height: 80%;
-  background-color: crimson;
-  color: white;
-  border: 1px solid crimson;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: large;
-  position: relative;
-  z-index: 1;
-  transition: all .5s ease;
-}
-
-.contact-btn:hover{
-  transform: translateY(20px);
-  box-shadow: 0px 0px 10px 1px red;
-  cursor: pointer;
-}
-
-.contact-btn > span{
-  font-family: "science gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.contact-btn2{
-  position: absolute;
-  background-color: red;
-  width: 100%;
+  font-family: 'science gothic', Courier, monospace;
   height: 100%;
+  box-shadow: inset 0px 0px 10px 0px red;
+  text-shadow: 0px 0px 5px black;
+  background: linear-gradient(90deg, crimson, red, crimson);
+  position: relative;
+}
+
+header h1::after{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  border: 1px solid red;
+  box-shadow: 0px 0px 30px 5px red;
   z-index: -1;
-  box-shadow: 0px 0px 30px 2px red;
+}
+
+/* header h1::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  text-shadow: 0px 0px 10px crimson;
+  background-color: #ff3f7f;
+} */
+
+main{
+  width: 100vw;
+  height: 100dvh;
+}
+
+.container{
+  margin: 0px auto;
+  width: 90%;
+  border: 1px solid black;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px black;
 }
 
 .section-1{
-  width: 80%;
+  width: 95%;
   border: 1px solid black;
   margin: 8% auto;
 }
 
 .assign-wrapper{
-  
+  border: 1px solid black;
 }
 
 .assign-card{
