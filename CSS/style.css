@@ -70,7 +70,7 @@ header h1 {
 }
 
 .typewrite1, .typewrite2, .typewrite3, .typewrite4, .typewrite5, .typewrite6, .typewrite7, .typewrite8, .typewrite9, .typewrite10, .typewrite11{
-
+  
 } 
 
 header h1::after {
@@ -228,23 +228,7 @@ header h1::after {
 }
 
 .card-wrapper1{
-  animation: panToRight 3s ease;
-}
-
-.card-wrapper2{
-  animation: panRight 5s ease;
-}
-
-@keyframes panToRight {
-  from{
-    transform: translateZ(0%);
-    opacity: 0;
-  }
-  to{
-    transform: translateZ(100%);
-    opacity: 1;
-    transition-delay: 5s;
-  }
+  animation: panRight 3s ease;
 }
 
 @keyframes panRight {
