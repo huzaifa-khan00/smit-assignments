@@ -51,7 +51,6 @@ header img {
   height: auto;
   width: 30%;
   margin-top: 1em;
-  border: 1px solid;
   position: relative;
 }
 
@@ -101,6 +100,7 @@ header::after {
   box-shadow: 0px 0px 20px 5px rgb(255, 0, 0);
   border-radius: 100%;
   z-index: 1;
+  animation: infGradient 5s linear infinite;
 }
 
 header h1 {
@@ -130,8 +130,12 @@ header h1::after {
   z-index: -1;
 }
 
-header h1:hover::after{
-  animation: infGradient 5s ease;
+.social-link{
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  position: absolute;
+  left: 1%;
 }
 
 .container {
