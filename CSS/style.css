@@ -51,6 +51,56 @@ header img {
   height: auto;
   width: 30%;
   margin-top: 1em;
+  border: 1px solid;
+  position: relative;
+}
+
+@keyframes infGradient {
+  0%{
+    background: linear-gradient(0deg, crimson, red, rgb(189, 0, 142))
+  }
+  10%{
+    background: linear-gradient(36deg, crimson, red, rgb(189, 0, 142))
+  }
+    20%{
+    background: linear-gradient(72deg, crimson, red, rgb(189, 0, 142))
+  }
+  30%{
+    background: linear-gradient(108deg, crimson, red, rgb(189, 0, 142))
+  }
+    40%{
+    background: linear-gradient(144deg, crimson, red, rgb(189, 0, 142))
+  }
+  50%{
+    background: linear-gradient(180deg, crimson, red, rgb(189, 0, 142))
+  }
+    60%{
+    background: linear-gradient(216deg, crimson, red, rgb(189, 0, 142))
+  }
+    70%{
+    background: linear-gradient(252deg, crimson, red, rgb(189, 0, 142))
+  }
+  80%{
+    background: linear-gradient(288deg, crimson, red, rgb(189, 0, 142))
+  }
+    90%{
+    background: linear-gradient(334deg, crimson, red, rgb(189, 0, 142))
+  }
+  100%{
+    background: linear-gradient(360deg, crimson, red, rgb(189, 0, 142))
+  }
+}
+
+header::after {
+  content: '';
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 13%;
+  right: 42.7%;
+  box-shadow: 0px 0px 20px 5px rgb(255, 0, 0);
+  border-radius: 100%;
+  z-index: 1;
 }
 
 header h1 {
@@ -78,6 +128,10 @@ header h1::after {
   border: 1px solid red;
   box-shadow: 0px 0px 30px 5px red;
   z-index: -1;
+}
+
+header h1:hover::after{
+  animation: infGradient 5s ease;
 }
 
 .container {
