@@ -54,55 +54,6 @@ header img {
   position: relative;
 }
 
-@keyframes infGradient {
-  0%{
-    background: linear-gradient(0deg, crimson, red, rgb(189, 0, 142))
-  }
-  10%{
-    background: linear-gradient(36deg, crimson, red, rgb(189, 0, 142))
-  }
-    20%{
-    background: linear-gradient(72deg, crimson, red, rgb(189, 0, 142))
-  }
-  30%{
-    background: linear-gradient(108deg, crimson, red, rgb(189, 0, 142))
-  }
-    40%{
-    background: linear-gradient(144deg, crimson, red, rgb(189, 0, 142))
-  }
-  50%{
-    background: linear-gradient(180deg, crimson, red, rgb(189, 0, 142))
-  }
-    60%{
-    background: linear-gradient(216deg, crimson, red, rgb(189, 0, 142))
-  }
-    70%{
-    background: linear-gradient(252deg, crimson, red, rgb(189, 0, 142))
-  }
-  80%{
-    background: linear-gradient(288deg, crimson, red, rgb(189, 0, 142))
-  }
-    90%{
-    background: linear-gradient(334deg, crimson, red, rgb(189, 0, 142))
-  }
-  100%{
-    background: linear-gradient(360deg, crimson, red, rgb(189, 0, 142))
-  }
-}
-
-/* header::after {
-  content: '';
-  width: 45px;
-  height: 45px;
-  position: absolute;
-  top: 13%;
-  right: 42.7%;
-  box-shadow: 0px 0px 20px 5px rgb(255, 0, 0);
-  border-radius: 100%;
-  z-index: 1;
-  animation: infGradient 5s linear infinite;
-} */
-
 header h1 {
   text-align: center;
   margin-top: 20px;
@@ -111,12 +62,16 @@ header h1 {
   color: white;
   font-family: "science gothic", Courier, monospace;
   height: 100%;
-  width: clamp(120px, 38%, 1200px);
+  width: 8em;
   box-shadow: inset 0px 0px 10px 0px red;
   text-shadow: 0px 0px 3px black;
   background: linear-gradient(90deg, crimson, red 50%, crimson 70%);
   position: relative;
 }
+
+.typewrite1, .typewrite2, .typewrite3, .typewrite4, .typewrite5, .typewrite6, .typewrite7, .typewrite8, .typewrite9, .typewrite10, .typewrite11{
+
+} 
 
 header h1::after {
   position: absolute;
@@ -268,6 +223,37 @@ header h1::after {
   display: flex;
   align-items: center;
   gap: 2em;
+  animation: panRight 1s ease;
+  animation-timeline: view();
+}
+
+.card-wrapper1{
+  animation: panToRight 3s ease;
+}
+
+.card-wrapper2{
+  animation: panRight 5s ease;
+}
+
+@keyframes panToRight {
+  from{
+    transform: translateZ(0%);
+    opacity: 0;
+  }
+  to{
+    transform: translateZ(100%);
+    opacity: 1;
+    transition-delay: 5s;
+  }
+}
+
+@keyframes panRight {
+  0%{
+    transform: translateX(-100%);
+  }
+  30%{
+    transform: translateX(0%);
+  }
 }
 
 .assign-reveal-card{
