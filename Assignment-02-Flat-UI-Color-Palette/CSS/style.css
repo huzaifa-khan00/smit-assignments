@@ -186,7 +186,7 @@
 
     .container {
       width: 100vw;
-      height: 324vh;
+      height: 234vh;
       justify-content: flex-start;
       padding-top: 8vw;
     }
@@ -203,6 +203,7 @@
       margin-bottom: 0px;
       width: 100vw;
       height: 120vh;
+      margin-bottom: -14%;    
     }
 
     .row2 {
@@ -230,6 +231,7 @@
       margin-bottom: 0px;
       width: 100vw;
       height: 100vh;
+      margin-bottom: -10%;
     }
 
     .row2 {
@@ -250,6 +252,7 @@
       margin-bottom: 0px;
       width: 100vw;
       height: 85vh;
+      margin-bottom: -9%;
     }
 
     .row2 {
