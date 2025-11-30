@@ -12,6 +12,8 @@ body {
 }
 
 .container {
+  width: 100%;
+  height: 100dvh;
   padding: 1%;
   background-image: url("../Assets/Images/landscape-background.jpeg");
   background-repeat: no-repeat;
