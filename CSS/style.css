@@ -72,7 +72,7 @@ header h1 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: clamp(1em, 5em, 8em);
+  font-size: clamp(2em, 5vw, 10em);
   color: white;
   font-family: "science gothic", Courier, monospace;
   height: 100%;
@@ -81,19 +81,6 @@ header h1 {
   text-shadow: 0px 0px 3px black;
   background: linear-gradient(90deg, crimson, red 50%, crimson 70%);
   position: relative;
-}
-
-.typewrite1,
-.typewrite2,
-.typewrite3,
-.typewrite4,
-.typewrite5,
-.typewrite6,
-.typewrite7,
-.typewrite8,
-.typewrite9,
-.typewrite10,
-.typewrite11 {
 }
 
 header h1::after {
@@ -112,7 +99,7 @@ header h1::after {
 .social-link {
   display: flex;
   flex-direction: column;
-  width: 10em;
+  width: clamp(7em, 10vw, 20em);
   position: absolute;
   left: 1%;
 }
@@ -152,8 +139,8 @@ header h1::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 480px;
-  height: 320px;
+  width: clamp( 250px, min(480px, 40vw), 100%);
+  height: clamp(80px, min(320px, 30vw), 800px);
   /* border: 1px solid black; */
   box-shadow: 0px 0px 5px 0px black;
   color: white;
@@ -162,19 +149,29 @@ header h1::after {
   transition: all 1s ease;
 }
 
-.assign-card-link {
+.card-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 30%;
-  height: 20em;
-  border: 1px solid black;
-  color: white;
-  border-radius: 10px;
+  gap: clamp(2em, 1vw, 5em);
+  animation: panRight 1s ease;
+  animation-timeline: view();
+}
+
+.card-wrapper1 {
+  animation: panRight 3s ease;
+}
+
+@keyframes panRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateX(0%);
+  }
 }
 
 .card-image {
-  height: 80%;
+  height: 75%;
   transition: all 0.5s ease;
 }
 
@@ -186,7 +183,7 @@ header h1::after {
 }
 
 .card-btn {
-  width: 480px;
+  width: clamp( 100px, min(480px, 40vw), 1000px);
   height: 200px;
   border-radius: 0px 0px 5px 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -243,27 +240,6 @@ header h1::after {
   transition: all 0.5s ease;
 }
 
-.card-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  animation: panRight 1s ease;
-  animation-timeline: view();
-}
-
-.card-wrapper1 {
-  animation: panRight 3s ease;
-}
-
-@keyframes panRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  30% {
-    transform: translateX(0%);
-  }
-}
-
 .assign-reveal-card {
   height: 15em;
   z-index: -1;
@@ -275,7 +251,7 @@ header h1::after {
   font-size: 0.5em;
   text-shadow: 0px 0px 10px black;
   color: white;
-  transform: translateX(-500px);
+  transform: translate(-150px, 100px);
   transition: all 1s ease;
 }
 
@@ -285,13 +261,14 @@ header h1::after {
   text-shadow: 0px 0px 10px black;
   color: white;
   background: linear-gradient(90deg, blue, cyan);
-  transform: translateX(-500px);
+  transform: translate(-200px, 100px);
   transition: all 0.5s ease;
 }
 
 .assign-card:hover + .assign-reveal-card h2 {
-  transform: translateX(0);
-  font-size: 3em;
+  transform: translate(0px, 0px);
+  /* font-size: 3em; */
+  font-size: 4vw;
 }
 
 .assign-card:hover {
@@ -299,8 +276,116 @@ header h1::after {
 }
 
 .assign-card:hover + .assign-reveal-card p {
-  transform: translateX(0);
+  transform: translate(0px, 0px);
+  /* font-size: 2em; */
+  font-size: 2.5vw;
+}
+
+@media (max-wdith: 768px) {
+
+.assign-card {
+ width: clamp( 250px, min(480px, 40vw), 100%);
+  height: clamp(80px, min(320px, 30vw), 800px);
+  
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.assign-reveal-card {
+  height: 0em;
+  z-index: -1;
+}
+
+.assign-reveal-card h2 {
+  font-size: 10px;
+}
+
+.assign-reveal-card p {
+  font-size: 10px;
+}
+
+.assign-card:hover + .assign-reveal-card{
+  height: 10em;
+  z-index: -1;
+}
+
+.assign-card:hover + .assign-reveal-card h2 {
+  transform: translate(0px, 20px);
   font-size: 2em;
+}
+
+.assign-card:hover {
+  transform: scale(1.02);
+}
+
+.assign-card:hover + .assign-reveal-card p {
+  transform: translate(0px, 20px);
+  font-size: 1.2em;
+}
+}
+
+}
+
+@media (max-width: 425px) {
+
+
+
+.assign-card {
+  width: 100%;
+  height: 255px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.card-btn {
+  width: 100%;
+  height: 100px;
+}
+
+.assign-reveal-card {
+  height: 0em;
+  z-index: -1;
+  transition: all 1s ease;
+}
+
+.assign-reveal-card h2 {
+  font-size: 10px;
+  transform: translateY(-220px)
+}
+
+.assign-reveal-card p {
+  font-size: 10px;
+  transform: translateY(-220px);
+}
+
+.assign-card:hover + .assign-reveal-card{
+  height: 10em;
+  z-index: -1;
+}
+
+.assign-card:hover + .assign-reveal-card h2 {
+  transform: translateY(0px);
+  font-size: 2em;
+}
+
+.assign-card:hover {
+  transform: scale(1.02);
+}
+
+.assign-card:hover + .assign-reveal-card p {
+  transform: translateY(0px);
+  font-size: 1.2em;
+}
+
 }
 
 /* Add flowing effect for the top Heading dot */
