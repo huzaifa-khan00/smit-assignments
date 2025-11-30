@@ -228,7 +228,6 @@ div > form {
 	color: #0b57d0;
 }
 
-/* Optional text styling */
 .floating-label label::after {
 	content: attr(data-optional);
 	color: gray;
