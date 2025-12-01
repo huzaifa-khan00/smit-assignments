@@ -7,7 +7,6 @@
 html,
 body {
   width: 100%;
-  height: 100dvh;
   background-color: gray;
 }
 
@@ -30,11 +29,13 @@ nav {
   width: 100%;
   padding: 5px;
   background: linear-gradient(90deg, purple, crimson, purple);
-
-  /* background-color: rgba(0, 0, 0, 0.5); */
   margin: 0px auto;
   position: relative;
   z-index: 10;
+}
+
+.nav-mobile {
+  display: none;
 }
 
 nav::after {
@@ -50,7 +51,7 @@ nav::after {
 
 .logo {
   height: 100%;
-  width: 15%;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +64,7 @@ nav::after {
   box-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
-.logo > img {
+.logo>img {
   object-fit: contain;
   width: 100%;
   height: auto;
@@ -148,65 +149,73 @@ nav img {
   font-weight: bold;
 }
 
-.card1 img {
+.card1 img, .card2 img, .card3 img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
 
-.img1 {
-  width: 100%;
-  height: 203px;
-}
-
-.card2 img {
-  height: 100%;
-  width: 100%;
-}
-
-.img2 {
-  width: 100%;
-  height: 203px;
-}
-
-.card3 img {
-  height: 100%;
-  width: 100%;
-}
-
-.img3 {
+.img1, .img2, .img3 {
   width: 100%;
   height: 203px;
 }
 
 .card-content h1 {
   font-size: 1.6em;
-  margin-bottom: 2.392vw;
+  margin-bottom: 1vw;
 }
 
 .card-content p {
   overflow: hidden;
 }
 
-@media (max-width: 1099px) {
-  html,
-  body {
-    height: 127dvh;
+@media (min-width: 1024px) and (max-width: 1024px) {
+    .container{
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container{
+    height: auto;
   }
 }
 
 @media (max-width: 425px) {
-  html,
-  body {
-    height: 200dvh;
+
+  .container{
+    padding-bottom: 3vw;
+  }
+
+  nav .menu {
+    display: block;
+    width: 50px;
+    height: 40px;
+  }
+
+  nav .logo {
+    width: 50%;
+  }
+
+  nav .links {
+    display: none;
   }
 
   .card1,
-.card2,
-.card3 {
-  margin-top: 4em;
-  width: 90%;
-  height: 500px;
+  .card2,
+  .card3 {
+    margin-top: 4em;
+    width: 300px;
+    height: 500px;
+  }
+
+  .card-content {
+    font-size: medium;
+  }
+
+  .card-content h1 {
+  font-size: 1.6em;
+  margin-bottom: 10vw;
 }
 
 }
