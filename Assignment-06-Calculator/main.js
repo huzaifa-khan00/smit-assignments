@@ -1,10 +1,12 @@
 let equalPress = 0;
 let errorDisplay = document.createElement('p');
-let prohibChars = ['+', '-', '/', '*', '(', '.'];
-let prohibChars2 = ['+', '-', '/', '*', ')', '.'];
+let prohibCharsRight = ['+', '-', '/', '*', '(', '.'];
+let prohibCharsLeft = ['+', '-', '/', '*', ')', '.'];
 function calculator(data) {
   if (data == "equal") {
     equalPress++;
+
+    // double symbol validation with new error message with orange or yellow color
 
     let currentData = document.getElementById("current-display").innerText;
 
@@ -14,7 +16,7 @@ function calculator(data) {
 
     if (equalPress >= 1) {
 
-      if (prohibChars.includes(currentData.slice(-1))||prohibChars2.includes(currentData.slice(0, 1))) {
+      if (prohibCharsRight.includes(currentData.slice(-1))||prohibCharsLeft.includes(currentData.slice(0, 1))) {
         errorDisplay.id = 'error-display';
         document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
         errorDisplay.innerText = " Invalid Input";
