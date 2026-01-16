@@ -1,38 +1,61 @@
 let equalPress = 0;
 
-function calculator(data){
+function calculator(data) {
+  if (data == "equal") {
+    equalPress++;
 
-   if(data == "equal"){
-      equalPress++;
+    let currentData = document.getElementById("current-display").innerText;
 
-      let currentData = document.getElementById('current-display').innerText;
+    let secValue = document.getElementById("second-display").innerText;
 
-      let secValue = document.getElementById('second-display').innerText;
+    document.getElementById("second-display").innerText = currentData;
 
-      document.getElementById('second-display').innerText = currentData;
+    if (equalPress >= 1) {
+      if (currentData.slice(-1) == "+") {
+        document.getElementById('error-display').innerText = currentData.slice(-1) + " Invalid Input ";
+        return;
+      }
 
-      if(equalPress >= 2){
-         document.getElementById('third-display').innerText = secValue;
-         document.getElementById('current-display').innerText = currentData;
+      if (currentData.slice(-1) != "+") {
+        document.getElementById('error-display').innerText = '';
       }
       
-      currentData = document.getElementById('current-display').innerText = eval(currentData);
-      
-      console.log(currentData)
-      return;
-   }if(data == "clear"){
-      equalCount = 0;
-      document.getElementById('current-display').innerText = '';
-      document.getElementById('second-display').innerText = '';
-      document.getElementById('third-display').innerText = '';
-      return;
-   }if(data == "del"){
-      let del = document.getElementById('current-display').innerText;
-      del = del.slice(0, del.length -1);
-      document.getElementById('current-display').innerText = del;
-      return;
-   }
+      if (equalPress >= 2) {
+        document.getElementById("third-display").innerText = secValue;
+        document.getElementById("current-display").innerText = currentData;
+      }
 
-   document.getElementById('current-display').innerText += data;
-   
+      currentData = document.getElementById("current-display").innerText =
+
+        eval(currentData);
+
+        
+
+      return;
+    }
+  }
+  if (data == "clear") {
+    equalCount = 0;
+    document.getElementById("current-display").innerText = "";
+    document.getElementById("second-display").innerText = "";
+    document.getElementById("third-display").innerText = "";
+    document.getElementById('error-display').innerText = '';
+    return;
+  }
+  if (data == "del") {
+    let del = document.getElementById("current-display").innerText;
+    del = del.slice(0, del.length - 1);
+    document.getElementById("current-display").innerText = del;
+    return;
+  }
+
+  result = document.getElementById("current-display");
+  result.innerText += data;
+
+
+  if (result.innerText.slice(-1) == "+") {
+
+      invalidValue = result.innerText.slice(-1);
+      console.log(invalidValue);
+}
 }

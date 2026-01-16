@@ -64,8 +64,8 @@ h1::after{
     content: '';
     inset: 0;
     background-color: #444649;
-    mask-image: linear-gradient(to right, black 0%, transparent 100%);
-    width: 50px;
+    -webkit-mask-image: linear-gradient(to right, black 10%, transparent 100%);
+    mask-image: linear-gradient(to right, black -1%, transparent 100%);
     border-radius: 20px 0px 0px 0px;
     height: 25%;
     position: absolute;
@@ -269,6 +269,31 @@ button:active{
     grid-row: 1/2;
     animation: fade-in 1.5s ease-in-out 2.5s;
     animation-fill-mode: both;
+}
+
+@keyframes errAnimation {
+    from{
+        opacity: 0;
+        color: rgb(136, 0, 0);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#error-display{
+    padding-right: 15%;
+    font-family: 'science gothic', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: none;
+    color: rgb(255, 0, 0);
+    height: 79%;
+    display: block;
+    width: 120%;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    animation: errAnimation 0.5s ease;
 }
 
 .button0{
