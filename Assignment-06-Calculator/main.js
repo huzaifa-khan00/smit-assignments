@@ -3,22 +3,25 @@ let tempArr = [];
 let errorDisplay = document.createElement('p');
 let prohibCharsRight = ['+', '-', '/', '*', '(', '.'];
 let prohibCharsLeft = ['+', '-', '/', '*', ')', '.'];
+let illegaChars = ['++', '--', '//', '**', '((', '))', '..', '()', ')('];
+
 function calculator(data) {
 
   tempArr.unshift(data);
 
-  if(tempArr[0] == tempArr[1]){
-  
-     errorDisplay.id = 'error-display2';
+  if(tempArr.length >= 2) 
+  if(illegaChars.includes(tempArr[0] + tempArr[1])){
+    console.log("Illegal " + tempArr[0] + tempArr[1])
+        errorDisplay.id = 'error-display2';
         document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
-        errorDisplay.innerText = " Invalid Input";
+        errorDisplay.innerText = "Double " + tempArr[0] + tempArr[1] + " Are Illegal";
+        tempArr = [];
         return;
   }
 
   if (data == "equal") {
     equalPress++;
-    // double symbol validation with new error message with orange or yellow color
-    
+
     // Also Create the Theme Change Logic
     let currentData = document.getElementById("current-display").innerText;
 
@@ -35,18 +38,12 @@ function calculator(data) {
         return;
       }
 
-      if(currentData.slice(-1) != "+"){
-           errorDisplay.innerText = "";
-        }
-
       if (equalPress >= 2) {
         document.getElementById("third-display").innerText = secValue;
         document.getElementById("current-display").innerText = currentData;
       }
 
-      currentData = document.getElementById("current-display").innerText =
-      // if currentdata has any double character 
-        eval(currentData);
+      currentData = document.getElementById("current-display").innerText = eval(currentData);
 
       return;
     }
@@ -69,6 +66,8 @@ function calculator(data) {
     document.getElementById("current-display").innerText = del;
     return;
   }
+
+  // use rtl direction and shift the last value at first position to avoid invert typing
 
   result = document.getElementById("current-display");
   result.innerText += data;
