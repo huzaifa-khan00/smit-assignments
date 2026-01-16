@@ -293,7 +293,7 @@ button:active{
     width: 120%;
     grid-column: 2/4;
     grid-row: 1/2;
-    animation: errAnimation 0.5s ease;
+    animation: errAnimation 0.3s ease, all 0.5s ease;
 }
 
 .button0{
