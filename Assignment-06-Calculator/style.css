@@ -139,9 +139,10 @@ button:hover::after{
 }
 
 h1, p{
-    direction: rtl;
+    /* direction: rtl; */
+    text-align: right;
     width: 100%;
-    align-self: self-end;
+    /* align-self: self-end; */
     font-size: xx-large;
     overflow: hidden;
 }

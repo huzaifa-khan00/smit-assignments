@@ -1,6 +1,7 @@
 let equalPress = 0;
 let errorDisplay = document.createElement('p');
 let prohibChars = ['+', '-', '/', '*', '(', '.'];
+let prohibChars2 = ['+', '-', '/', '*', ')', '.'];
 function calculator(data) {
   if (data == "equal") {
     equalPress++;
@@ -13,7 +14,7 @@ function calculator(data) {
 
     if (equalPress >= 1) {
 
-      if (prohibChars.includes(currentData.slice(-1))||prohibChars.includes(currentData.slice(0, 1))) {
+      if (prohibChars.includes(currentData.slice(-1))||prohibChars2.includes(currentData.slice(0, 1))) {
         errorDisplay.id = 'error-display';
         document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
         errorDisplay.innerText = " Invalid Input";
@@ -44,7 +45,9 @@ function calculator(data) {
     document.getElementById("current-display").innerText = "";
     document.getElementById("second-display").innerText = "";
     document.getElementById("third-display").innerText = "";
-    document.getElementById('error-display').innerText = "";
+    if(errorDisplay.innerText != ''){
+      errorDisplay.innerText = '';
+    }
     return;
   }
 
