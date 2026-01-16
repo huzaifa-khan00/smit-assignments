@@ -1,5 +1,6 @@
 let equalPress = 0;
-
+let errorDisplay = document.createElement('p');
+let prohibChars = ['+', '-', '/', '*', '(', '.'];
 function calculator(data) {
   if (data == "equal") {
     equalPress++;
@@ -11,17 +12,17 @@ function calculator(data) {
     document.getElementById("second-display").innerText = currentData;
 
     if (equalPress >= 1) {
-      if (currentData.slice(-1) == "+") {
-        let errorDisplay = document.createElement('p');
+
+      if (prohibChars.includes(currentData.slice(-1))||prohibChars.includes(currentData.slice(0, 1))) {
         errorDisplay.id = 'error-display';
-        document.getElementsByClassName('btn-container')[0].append(errorDisplay);
-        errorDisplay.innerText = " Invalid Input ";
+        document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
+        errorDisplay.innerText = " Invalid Input";
         return;
       }
 
       if(currentData.slice(-1) != "+"){
-         document.getElementById('error-display').innerText = '';
-      }
+           errorDisplay.innerText = "";
+        }
 
       if (equalPress >= 2) {
         document.getElementById("third-display").innerText = secValue;
@@ -37,12 +38,13 @@ function calculator(data) {
       return;
     }
   }
+
   if (data == "clear") {
     equalCount = 0;
     document.getElementById("current-display").innerText = "";
     document.getElementById("second-display").innerText = "";
     document.getElementById("third-display").innerText = "";
-    document.getElementById('error-display').innerText = '';
+    document.getElementById('error-display').innerText = "";
     return;
   }
 
@@ -55,11 +57,4 @@ function calculator(data) {
 
   result = document.getElementById("current-display");
   result.innerText += data;
-
-
-  if (result.innerText.slice(-1) == "+") {
-
-      invalidValue = result.innerText.slice(-1);
-      console.log(invalidValue);
-}
 }
