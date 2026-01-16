@@ -1,13 +1,25 @@
 let equalPress = 0;
+let tempArr = [];
 let errorDisplay = document.createElement('p');
 let prohibCharsRight = ['+', '-', '/', '*', '(', '.'];
 let prohibCharsLeft = ['+', '-', '/', '*', ')', '.'];
 function calculator(data) {
+
+  tempArr.unshift(data);
+
+  if(tempArr[0] == tempArr[1]){
+  
+     errorDisplay.id = 'error-display2';
+        document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
+        errorDisplay.innerText = " Invalid Input";
+        return;
+  }
+
   if (data == "equal") {
     equalPress++;
-
     // double symbol validation with new error message with orange or yellow color
-
+    
+    // Also Create the Theme Change Logic
     let currentData = document.getElementById("current-display").innerText;
 
     let secValue = document.getElementById("second-display").innerText;
@@ -16,7 +28,7 @@ function calculator(data) {
 
     if (equalPress >= 1) {
 
-      if (prohibCharsRight.includes(currentData.slice(-1))||prohibCharsLeft.includes(currentData.slice(0, 1))) {
+      if (prohibCharsRight.includes(currentData.slice(-1)) || prohibCharsLeft.includes(currentData.slice(0, 1))) {
         errorDisplay.id = 'error-display';
         document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
         errorDisplay.innerText = " Invalid Input";
@@ -33,10 +45,8 @@ function calculator(data) {
       }
 
       currentData = document.getElementById("current-display").innerText =
-
+      // if currentdata has any double character 
         eval(currentData);
-
-        
 
       return;
     }
