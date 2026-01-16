@@ -60,6 +60,17 @@ main{
     animation-fill-mode: both;
 }
 
+h1::after{
+    content: '';
+    inset: 0;
+    background-color: #444649;
+    mask-image: linear-gradient(to right, black 0%, transparent 100%);
+    width: 50px;
+    border-radius: 20px 0px 0px 0px;
+    height: 25%;
+    position: absolute;
+}
+
 #third-display::after{
     content: '';
     position: absolute;
@@ -128,6 +139,8 @@ button:hover::after{
 }
 
 h1, p{
+    direction: rtl;
+    width: 100%;
     align-self: self-end;
     font-size: xx-large;
     overflow: hidden;
