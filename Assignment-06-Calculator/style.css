@@ -139,7 +139,6 @@ button:hover::after{
 }
 
 h1, p{
-    /* direction: rtl; */
     text-align: right;
     width: 100%;
     align-self: self-start;
@@ -152,6 +151,7 @@ h1{
     font-size: 50px;
     color: rgb(202, 202, 202);
     padding-bottom: 5px;
+    direction: rtl;
 }
 
 p{

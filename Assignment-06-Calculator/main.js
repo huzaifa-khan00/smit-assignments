@@ -1,4 +1,5 @@
 let equalPress = 0;
+let shiftValue;
 let tempArr = [];
 let errorDisplay = document.createElement('p');
 let prohibCharsRight = ['+', '-', '/', '*', '(', '.'];
@@ -9,15 +10,19 @@ function calculator(data) {
 
   tempArr.unshift(data);
 
-  if(tempArr.length >= 2) 
-  if(illegaChars.includes(tempArr[0] + tempArr[1])){
-    console.log("Illegal " + tempArr[0] + tempArr[1])
+  if(tempArr.length >= 2){
+     if(illegaChars.includes(tempArr[0] + tempArr[1])){
+        let currentData = document.getElementById('current-display');
+          currentData.innerText = currentData.innerText.slice(0, currentData.innerText.length-1);
         errorDisplay.id = 'error-display2';
         document.getElementsByClassName('btn-container')[0].prepend(errorDisplay);
         errorDisplay.innerText = "Double " + tempArr[0] + tempArr[1] + " Are Illegal";
         tempArr = [];
         return;
   }
+  }
+
+ 
 
   if (data == "equal") {
     equalPress++;
@@ -67,8 +72,19 @@ function calculator(data) {
     return;
   }
 
-  // use rtl direction and shift the last value at first position to avoid invert typing
+  // This is the only thing left
 
   result = document.getElementById("current-display");
+  
   result.innerText += data;
-}
+  // if(result.innerText.length >= 2 && (prohibCharsRight.includes(result.innerText.slice(-1))) || prohibCharsLeft.includes(result.innerText.slice(-1))){
+  //   if(result.innerText.slice(-1) == ')'){
+  //     let prohibParen = result.innerText.slice(-1);
+  //     prohibParen = '(';
+  //     result.innerText = prohibParen;
+  //     console.log("It will print" + prohibParen);
+  //   }
+    
+    // remember .slice returns a new string so we reassign the value
+    // result.innerText = result.innerText.slice(0, result.innerText.length-1);
+  }
