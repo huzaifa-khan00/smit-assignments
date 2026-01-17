@@ -27,7 +27,6 @@ function calculator(data) {
   if (data == "equal") {
     equalPress++;
 
-    // Also Create the Theme Change Logic
     let currentData = document.getElementById("current-display").innerText;
 
     let secValue = document.getElementById("second-display").innerText;
@@ -72,19 +71,7 @@ function calculator(data) {
     return;
   }
 
-  // This is the only thing left
-
   result = document.getElementById("current-display");
   
   result.innerText += data;
-  // if(result.innerText.length >= 2 && (prohibCharsRight.includes(result.innerText.slice(-1))) || prohibCharsLeft.includes(result.innerText.slice(-1))){
-  //   if(result.innerText.slice(-1) == ')'){
-  //     let prohibParen = result.innerText.slice(-1);
-  //     prohibParen = '(';
-  //     result.innerText = prohibParen;
-  //     console.log("It will print" + prohibParen);
-  //   }
-    
-    // remember .slice returns a new string so we reassign the value
-    // result.innerText = result.innerText.slice(0, result.innerText.length-1);
   }
