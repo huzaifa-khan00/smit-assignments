@@ -11,7 +11,7 @@ function calculator(data) {
   tempArr.unshift(data);
 
   if(tempArr.length >= 2){
-     if(illegaChars.includes(tempArr[0] + tempArr[1])){
+     if(illegaChars.includes(tempArr[0] + tempArr[1]) ){
         let currentData = document.getElementById('current-display');
           currentData.innerText = currentData.innerText.slice(0, currentData.innerText.length-1);
         errorDisplay.id = 'error-display2';

@@ -143,7 +143,17 @@ h1, p{
     width: 100%;
     align-self: self-start;
     font-size: xx-large;
-    overflow: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    overflow: auto;
+}
+
+h1::-webkit-scrollbar{
+    display: none;
+}
+
+p::-webkit-scrollbar{
+    display: none;
 }
 
 h1{
