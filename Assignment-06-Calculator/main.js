@@ -7,6 +7,16 @@ let illegaChars = ['++', '--', '//', '**', '((', '))', '..', '()', ')('];
 
 function calculator(data) {
 
+    if(document.getElementById('current-display').innerText == '' && data == 'equal'){
+     let currentData = document.getElementById( 'current-display' );
+     errorDisplay.id = 'error-display2';
+     document.getElementsByClassName( 'btn-container' )[0].prepend(errorDisplay);
+     errorDisplay.innerText = "Please input value";
+     return;
+  }
+  
+  errorDisplay.innerText = "";
+
   tempArr.unshift(data);
 
   if (tempArr.length >= 2){
@@ -20,15 +30,6 @@ function calculator(data) {
         return;
   }
   }
-
-  if(document.getElementById('current-display').innerText == '' && data == 'equal'){
-     let currentData = document.getElementById( 'current-display' );
-     errorDisplay.id = 'error-display2';
-     document.getElementsByClassName( 'btn-container' )[0].prepend(errorDisplay);
-     errorDisplay.innerText = "Please input value";
-     return;
-  }
-  errorDisplay.innerText = "";
   
 
   if (data == "equal") {
