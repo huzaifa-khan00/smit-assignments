@@ -65,7 +65,7 @@ h1::after{
     -webkit-mask-image: linear-gradient(to right, black 10%, transparent 100%);
     mask-image: linear-gradient(to right, black -1%, transparent 100%);
     border-radius: 20px 0px 0px 0px;
-    height: 25%;
+    height: 30vh;
     position: absolute;
 }
 
@@ -79,7 +79,7 @@ h1::after{
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 5%, transparent 100%);
     width: 100%;
-    height: clamp(20px, 20%, 60px); 
+    height: 10vh; 
     z-index: 1;
     border-radius: 20px;
     transition: all 0.5s ease;
