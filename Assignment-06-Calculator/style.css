@@ -162,8 +162,7 @@ h1{
     flex-grow: 2;
     font-size: 50px;
     color: rgb(202, 202, 202);
-    padding-bottom: 5px;
-    direction: rtl;
+    /* direction: rtl; */
 }
 
 p{

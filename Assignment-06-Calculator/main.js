@@ -81,4 +81,5 @@ function calculator(data) {
   result = document.getElementById( "current-display" );
   
   result.innerText += data;
+  result.scrollLeft = result.scrollWidth;
   }
