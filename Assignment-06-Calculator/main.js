@@ -56,7 +56,6 @@ function calculator(data) {
       }
 
       currentData = document.getElementById( "current-display" ).innerText = eval( currentData );
-
       return;
     }
   }
