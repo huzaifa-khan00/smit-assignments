@@ -40,7 +40,36 @@ function getTime() {
    thu.style.color = "white"; 
   }else if(day == 5){
    fri.style.color = "white"; 
-  }else{
+  }else if(day == 6){
    sat.style.color = "white"; 
   }
+    
+// Solve edge-cases
+  if (hours == 0) {
+    hours = 12;
+  }
+  if (hours > 12) {
+    hours = hours - 12;
+  }
+  if (hours > -1 && hours < 10) {
+    hours = "0" + hours;
+  }
+  if (minutes > -1 && minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds > -1 && seconds < 10) {
+    seconds = "0" + seconds;
 }
+
+  hourDisplay.innerText = hours;
+  minutesDisplay.innerText = minutes;
+  secondsDisplay.innerText = seconds;
+
+// Ignore this code, duplicated for styling purposes
+  hourDisplay2.innerText = hours;
+  minutesDisplay2.innerText = minutes;
+  secondsDisplay2.innerText = seconds;
+// Ignore code above
+}
+
+setInterval(getTime, 1000);
