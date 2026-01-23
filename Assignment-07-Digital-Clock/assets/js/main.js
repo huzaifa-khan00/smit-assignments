@@ -1,6 +1,10 @@
 let hourDisplay = document.getElementById("hours");
 let minutesDisplay = document.getElementById("minutes");
 let secondsDisplay = document.getElementById("seconds");
+let milSecondsDisplay = document.getElementById('mil-seconds');
+let amDisplay = document.getElementById('am');
+let pmDisplay = document.getElementById('pm');
+let dateDisplay = document.getElementById('date');
 
 // Ignore the code below, duplicated for styling purposes
 let hourDisplay2 = document.getElementById("hours2");
@@ -17,15 +21,23 @@ let thu = document.getElementById('thu');
 let fri = document.getElementById('fri');
 let sat = document.getElementById('sat');
 
+function milSec(){
+    let date = new Date();
+    let milSeconds = date.getMilliseconds();
+    milSecondsDisplay.innerText = milSeconds;
+}
+
+setInterval(milSec, 1);
+
 function getTime() {
   
   let date = new Date();
+  let valHours = date.getHours();
   let day = date.getDay();
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
-  let milSeconds = date.getMilliseconds();
-
+  let currentDate = date.getDate();
 
 //   Take the day number and turn it bright
   if(day == 0){
@@ -51,19 +63,28 @@ function getTime() {
   if (hours > 12) {
     hours = hours - 12;
   }
-  if (hours > -1 && hours < 10) {
+  if (hours < 10) {
     hours = "0" + hours;
   }
-  if (minutes > -1 && minutes < 10) {
+  if (minutes < 10) {
     minutes = "0" + minutes;
   }
-  if (seconds > -1 && seconds < 10) {
+  if (seconds < 10) {
     seconds = "0" + seconds;
 }
+  if(valHours < 13){
+    amDisplay.innerText = "AM";
+    amDisplay.style.color = "white";
+}else if(valhours > 12){
+    pmDisplay.innerText = "PM";
+    pmDisplay.style.color = "white";
+}
+    
 
   hourDisplay.innerText = hours;
   minutesDisplay.innerText = minutes;
   secondsDisplay.innerText = seconds;
+  dateDisplay.innerText = currentDate;
 
 // Ignore this code, duplicated for styling purposes
   hourDisplay2.innerText = hours;

@@ -39,9 +39,8 @@ body{
 }
 
 main{
-    background-color: aqua;
     width: 100%;
-    height: 100%;
+    height: 50%;
     /* background-color: gray; */
     display: flex;
     flex-direction: column;
@@ -50,7 +49,6 @@ main{
 }
 
 #clock{
-    background-color: red;
     user-select: none;
     display: flex;
     align-items: center;
@@ -98,6 +96,73 @@ main{
     transition: all 0.5s ease;
 }
 
-#am-pm{
+#year-cont{
+    user-select: none;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 70rem;
+    color: gray;
+    text-shadow: 0px 0px 3px black;
+}
+
+@keyframes fadeBlink {
+    0%{
+        color: gray;
+        text-shadow: none;
+    }
+    50%{
+        text-shadow: 3px 3px 10px black;
+    }
+    100%{
+        color: gray;
+        text-shadow: none;
+    }
+}
+
+#am, #pm{
     font-size: 5em;
+}
+
+@keyframes blink {
+    0%{
+        color: gray;
+        
+    }
+    50%{
+        color: white;
+    }
+    100%{
+        color: gray;
+    }
+}
+
+#year{
+    font-size: 10em;
+}
+
+.y1{
+    animation: fadeBlink 2s ease-in-out infinite both 0.9s;
+    animation-fill-mode: both;
+}
+.y2{
+animation: fadeBlink 2s ease-in-out infinite both 1.4s;
+    animation-fill-mode: both;
+}
+.y3{
+animation: fadeBlink 2s ease-in-out infinite both 1.9s;
+    animation-fill-mode: both;
+}
+.y4{
+animation: fadeBlink 2s ease-in-out infinite both 2.4s;
+    animation-fill-mode: both;
+}
+
+.date-cont{
+
+    font-size: 4em;
+}
+
+#date{
+    color: white;    
 }
