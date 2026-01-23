@@ -137,7 +137,17 @@ main{
     }
 }
 
+@keyframe popUp{
+    from{
+        
+}       
+    to{
+        
+    }
+}
+
 #year{
+    
     font-size: 10em;
 }
 
