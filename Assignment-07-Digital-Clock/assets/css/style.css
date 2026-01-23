@@ -1,19 +1,18 @@
 @font-face {
     font-family: 'payton';
-    /* Order matters: Browser tries the first one first */
     src: url('../font/Payton-KVnwA.otf') format('opentype'),
          url('../font/Payton-2vRYl.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; /* Best practice in 2026 for faster loading */
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Azonix'; /* You can name it anything, but 'Azonix' is standard */
-    src: url('../font/Azonix-1VB0.woff2') format('woff2'); /* Adjusted for folder depth */
+    font-family: 'Azonix';
+    src: url('../font/Azonix-1VB0.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; /* Ensures text shows up immediately while font loads */
+    font-display: swap;
 }
 
 *{
@@ -43,7 +42,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 65rem;
+    width: 70rem;
     height: 20rem;
     font-size: 15em;
     color: rgb(139, 139, 139);
@@ -51,10 +50,8 @@ body{
     transition: all 0.5s ease;
 }
 
-
-
 #week{
-    padding-left: 20px;
+    padding-bottom: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -80,13 +77,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 65rem;
+    width: 70rem;
     padding: 0px auto;
     font-size: 15em;
     color: gray;
     text-shadow: -3px -3px 10px rgb(146, 146, 146);
     transition: all 0.5s ease;
 }
-
-
-
