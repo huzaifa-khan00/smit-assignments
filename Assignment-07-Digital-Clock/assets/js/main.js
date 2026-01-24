@@ -12,7 +12,7 @@ let minutesDisplay2 = document.getElementById("minutes2");
 let secondsDisplay2 = document.getElementById("seconds2");
 // Ignore the code above
 
-// This adds a bright effect to current day's text
+// Weekdays Initialization
 let sun = document.getElementById('sun');
 let mon = document.getElementById('mon');
 let tue = document.getElementById('tue');
