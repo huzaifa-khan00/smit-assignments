@@ -75,7 +75,7 @@ function getTime() {
   if(valHours < 13){
     amDisplay.innerText = "AM";
     amDisplay.style.color = "white";
-}else if(valhours > 12){
+}else if(valHours > 12){
     pmDisplay.innerText = "PM";
     pmDisplay.style.color = "white";
 }
