@@ -21,6 +21,20 @@ let thu = document.getElementById('thu');
 let fri = document.getElementById('fri');
 let sat = document.getElementById('sat');
 
+// Months
+let jan = document.getElementById('jan');
+let feb = document.getElementById('feb');
+let mar = document.getElementById('mar');
+let apr = document.getElementById('apr');
+let may = document.getElementById('may');
+let jun = document.getElementById('jun');
+let jul = document.getElementById('jul');
+let aug = document.getElementById('aug');
+let sep = document.getElementById('sep');
+let auc = document.getElementById('auc');
+let nov = document.getElementById('nov');
+let dec = document.getElementById('dec');
+
 function milSec(){
     let date = new Date();
     let milSeconds = date.getMilliseconds();
@@ -32,6 +46,7 @@ setInterval(milSec, 1);
 function getTime() {
   
   let date = new Date();
+  let months = date.getMonth();  
   let valHours = date.getHours();
   let day = date.getDay();
   let hours = date.getHours();
@@ -39,6 +54,32 @@ function getTime() {
   let seconds = date.getSeconds();
   let currentDate = date.getDate();
 
+if(months == 0){
+    jan.style.color = "white";
+}else if(months == 1){
+    feb.style.color = "white";
+}else if(months == 2){
+    mar.style.color = "white";
+}else if(months == 3){
+    apr.style.color = "white";
+}else if(months == 4){
+    may.style.color = "white";
+}else if(months == 5){
+    jun.style.color = "white";
+}else if(months == 6){
+    jul.style.color = "white";
+}else if(months == 7){
+    aug.style.color = "white";
+}else if(months == 8){
+    sep.style.color = "white";
+}else if(months == 9){
+    auc.style.color = "white";
+}else if(months == 10){
+    nov.style.color = "white";
+}else{
+    dec.style.color = "white";
+}
+    
 //   Take the day number and turn it bright
   if(day == 0){
    sun.style.color = "white";
