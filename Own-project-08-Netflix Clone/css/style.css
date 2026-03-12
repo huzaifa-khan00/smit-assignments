@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../assets/fonts/NetflixSans_W_Th.woff2') format('woff2'), /* Best format first */
+         url('../assets/fonts/NetflixSans_W_Th.woff') format('woff');    /* Fallback second */
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 700; /* Bold */
+    src: url('../assets/fonts/NetflixSans_W_Th.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 700; /* Bold */
+    src: url('../assets/fonts/NetflixSans_W_Th.woff2') format('woff2');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Netflix Sans';
+}
+
+html,body{
+    width: 100%;
+    height: auto;
+}
